@@ -1,0 +1,2 @@
+Librairies links:
+youtube_transcript_api: https://github.com/jdepoix/youtube-transcript-api,
