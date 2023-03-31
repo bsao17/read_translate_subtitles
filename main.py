@@ -1,6 +1,6 @@
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api.formatters import SRTFormatter
-from read_with_youtube_dl import *
+from read_with_pyTube import *
 
 youTube_video_id = "RHejHmUZR_U"
 

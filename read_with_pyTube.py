@@ -33,7 +33,7 @@ def load_subtitles(subtitles_file):
 
 def generate_speech(text):
     engine = pyttsx3.init()
-    engine.save_to_file(text, f"{text}.mp3")
+    engine.save_to_file(text, f"Sound/{text}.mp3")
     engine.runAndWait()
 
 
@@ -64,7 +64,7 @@ def main(video_url, subtitles_file, output_file):
     audio_clips = []
 
     for start, end, text in subtitles:
-        audio_file = f"{text}.mp3"
+        audio_file = f"Sound/{text}.mp3"
 
         if not os.path.exists(audio_file):
             generate_speech(text)
