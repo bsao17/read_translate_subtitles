@@ -5,6 +5,13 @@ import pyttsx3
 from moviepy.audio.AudioClip import concatenate_audioclips
 from pytube import YouTube
 import numpy as np
+import re
+
+
+def clean_filename(filename):
+    cleaned = re.sub(r'[\\/*?:"<>|]', "", filename)
+    cleaned = cleaned.replace(" ", "_")
+    return cleaned
 
 
 def download_video_from_url(url, output_filename):
@@ -33,8 +40,11 @@ def load_subtitles(subtitles_file):
 
 def generate_speech(text):
     engine = pyttsx3.init()
-    engine.save_to_file(text, f"Sound/{text}.mp3")
+    os.makedirs("sound", exist_ok=True)
+    cleaned_text = clean_filename(text)
+    engine.save_to_file(text, f"sound/{cleaned_text}.mp3")
     engine.runAndWait()
+    print(f"Generated audio file: {cleaned_text}")
 
 
 def silence_get_frame(t):
@@ -64,7 +74,8 @@ def main(video_url, subtitles_file, output_file):
     audio_clips = []
 
     for start, end, text in subtitles:
-        audio_file = f"Sound/{text}.mp3"
+        cleaned_text = clean_filename(text)
+        audio_file = f"Sound/{cleaned_text}.mp3"
 
         if not os.path.exists(audio_file):
             generate_speech(text)
