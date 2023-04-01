@@ -2,6 +2,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api.formatters import SRTFormatter
 from read_with_pyTube import *
 import os
+import shutil
 
 youTube_video_id = "4pgLAA78hX8"
 
@@ -25,5 +26,5 @@ if __name__ == '__main__':
     subtitles_file = "captions.srt"
     output_file = "output_video.mp4"
     main(video_url, subtitles_file, output_file)
-    os.removedirs("Sound")
+    shutil.rmtree("Sound")
 

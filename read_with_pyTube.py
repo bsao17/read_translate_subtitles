@@ -42,7 +42,7 @@ def generate_speech(text):
     engine = pyttsx3.init()
     os.makedirs("sound", exist_ok=True)
     cleaned_text = clean_filename(text)
-    engine.save_to_file(text, f"sound/{cleaned_text}.mp3")
+    engine.save_to_file(text, f"Sound/{cleaned_text}.mp3")
     engine.runAndWait()
     print(f"Generated audio file: {cleaned_text}")
 
