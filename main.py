@@ -1,19 +1,18 @@
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api.formatters import SRTFormatter
 from read_with_pyTube import *
-import os
 import shutil
 
-youTube_video_id = "4pgLAA78hX8"
+youTube_video_id = "xZHjTqJSSak&t=314s"
 
 # Liste de langages disponibles
 transcript_list = YouTubeTranscriptApi.list_transcripts(youTube_video_id)
 
-# Trouver le transcript en anglais et le traduire en français
+# Trouver les sous titres en anglais et le traduire en français
 transcript_en = transcript_list.find_transcript(['en'])
 transcript_fr = transcript_en.translate('fr')
 
-# Formater le transcript traduit en SRT
+# Formater les sous titres traduit en SRT
 formatter = SRTFormatter()
 srt_content = formatter.format_transcript(transcript_fr.fetch())
 

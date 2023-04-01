@@ -1,5 +1,4 @@
 import os
-import re
 import moviepy.editor as mp
 import pyttsx3
 from moviepy.audio.AudioClip import concatenate_audioclips
