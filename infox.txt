@@ -1,2 +1,4 @@
 Librairies links:
-youtube_transcript_api: https://github.com/jdepoix/youtube-transcript-api,
+youtube_transcript_api: https://github.com/jdepoix/youtube-transcript-api, ( retieve subtitles translate them and convert them to SRT file)
+moviePy: https://zulko.github.io/moviepy/, ( working on videos, library)
+pytts3: https://github.com/nateshmbhat/pyttsx3 (text to Speech)
