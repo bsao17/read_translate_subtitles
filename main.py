@@ -2,9 +2,8 @@ from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api.formatters import SRTFormatter
 from read_with_pyTube import *
 import shutil
-import os
 
-os.environ["YOUTUBE_VIDEO_ID"] = "xZHjTqJSSak&t=314s"
+os.environ["YOUTUBE_VIDEO_ID"] = "C4T6KTzL7ww"
 
 youTube_video_id = os.environ["YOUTUBE_VIDEO_ID"]
 
