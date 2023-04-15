@@ -1,6 +1,13 @@
 FROM miigotu/python3.11-slim
 MAINTAINER ACN(Atlante Création Numérique)
 WORKDIR /app
-RUN pip install -r requirements.txt
-ENV YOUTUBE_VIDEO_ID=xZHjTqJSSak&t=314s
+COPY . /app
+RUN pip install youtube_transcript_api
+RUN pip install pytube
+RUN pip install Pillow
+RUN pip install moviepy
+RUN pip install pyttsx3
+RUN pip install pytube
+RUN pip install numpy
+ENV YOUTUBE_VIDEO_ID=0000
 CMD ["python3", "main.py"]
