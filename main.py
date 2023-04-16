@@ -1,9 +1,11 @@
+import os
+
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api.formatters import SRTFormatter
 from read_with_pyTube import *
 import shutil
 
-os.environ["YOUTUBE_VIDEO_ID"] = "uNbL3tRZeMQ"
+os.environ["YOUTUBE_VIDEO_ID"] = "_8DMEHxOLQE"
 
 youTube_video_id = os.environ["YOUTUBE_VIDEO_ID"]
 
@@ -27,6 +29,6 @@ if __name__ == '__main__':
     subtitles_file = "captions.srt"
     output_file = "output_video.mp4"
     main(video_url, subtitles_file, output_file)
-    shutil.rmtree("Sound")
+    shutil.rmtree("sound")
     print('The "Sound" directory and all (*.mp3) files are deleted !')
 
