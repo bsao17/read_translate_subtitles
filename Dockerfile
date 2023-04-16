@@ -4,5 +4,5 @@ WORKDIR /app
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 COPY . .
-ENV YOUTUBE_VIDEO_ID=0000
+ENV YOUTUBE_VIDEO_ID =
 CMD ["python", "main.py"]
