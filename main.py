@@ -29,6 +29,6 @@ if __name__ == '__main__':
     subtitles_file = "captions.srt"
     output_file = "output_video.mp4"
     main(video_url, subtitles_file, output_file)
-    shutil.rmtree("sound")
+    shutil.rmtree("F://sound")
     print('The "Sound" directory and all (*.mp3) files are deleted !')
 

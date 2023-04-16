@@ -41,9 +41,9 @@ def load_subtitles(subtitles_file):
 
 def generate_speech(text):
     engine = pyttsx3.init()
-    os.makedirs("sound", exist_ok=True)
+    os.makedirs("F://sound", exist_ok=True)
     cleaned_text = clean_filename(text)
-    engine.save_to_file(text, f"sound/{cleaned_text}.mp3")
+    engine.save_to_file(text, f"F://sound/{cleaned_text}.mp3")
     engine.runAndWait()
     print(f"Generated audio file: {cleaned_text}")
 
@@ -76,7 +76,7 @@ def main(video_url, subtitles_file, output_file):
 
     for start, end, text in subtitles:
         cleaned_text = clean_filename(text)
-        audio_file = f"Sound/{cleaned_text}.mp3"
+        audio_file = f"F://Sound/{cleaned_text}.mp3"
 
         if not os.path.exists(audio_file):
             generate_speech(text)
