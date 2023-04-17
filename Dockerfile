@@ -9,4 +9,5 @@ COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 COPY . .
 ENV YOUTUBE_VIDEO_ID =
+ENV HOST_PATH =
 ENTRYPOINT ["python", "main.py"]
