@@ -9,5 +9,5 @@ COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 COPY . .
 ENV YOUTUBE_VIDEO_ID =
-ENV HOST_PATH =
+ENV HOST_PATH = "C://temp_sound"
 ENTRYPOINT ["python", "main.py"]

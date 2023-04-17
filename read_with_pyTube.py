@@ -7,6 +7,10 @@ import numpy as np
 import re
 
 
+os.environ["HOST_PATH"] = "C://"
+
+host_path = os.environ["HOST_PATH"]
+
 def clean_filename(filename):
     cleaned = re.sub(r'[^\w\s]', '', filename)
     cleaned = cleaned.strip().replace(" ", "_")
@@ -41,9 +45,9 @@ def load_subtitles(subtitles_file):
 
 def generate_speech(text):
     engine = pyttsx3.init()
-    os.makedirs("F://sound", exist_ok=True)
+    os.makedirs(f"{host_path}sound", exist_ok=True)
     cleaned_text = clean_filename(text)
-    engine.save_to_file(text, f"F://sound/{cleaned_text}.mp3")
+    engine.save_to_file(text, f"{host_path}sound/{cleaned_text}.mp3")
     engine.runAndWait()
     print(f"Generated audio file: {cleaned_text}")
 
@@ -76,7 +80,7 @@ def main(video_url, subtitles_file, output_file):
 
     for start, end, text in subtitles:
         cleaned_text = clean_filename(text)
-        audio_file = f"F://Sound/{cleaned_text}.mp3"
+        audio_file = f"{host_path}Sound/{cleaned_text}.mp3"
 
         if not os.path.exists(audio_file):
             generate_speech(text)
